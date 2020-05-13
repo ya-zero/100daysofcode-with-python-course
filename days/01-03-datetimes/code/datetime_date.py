@@ -9,30 +9,30 @@ datetime.today()
 today = datetime.today()
 
 
-type(today)
+print (type(today))
 #<class 'datetime.datetime'>
 
 
 todaydate = date.today()
 
-todaydate
+print ('today:',todaydate)
 #datetime.date(2018, 2, 19)
 
 type(todaydate)
 #<class 'datetime.date'>
 
-todaydate.month
+print ('month:',todaydate.month)
 #2
 
-todaydate.year
+print('year:',todaydate.year)
 #2018
 
-todaydate.day
+print ('day:',todaydate.day)
 #19
 
 
-christmas = date(2018, 12, 25)
-christmas
+christmas = date(2020, 12, 25)
+print ('chr:',christmas)
 #datetime.date(2018, 12, 25)
 
 if christmas is not todaydate:
