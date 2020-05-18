@@ -4,11 +4,40 @@ import os
 import urllib.request
 
 tmp = os.getenv("TMP", "/tmp")
-DICTIONARY = os.path.join(tmp, 'dictionary_m_words.txt')
+print (tmp)
+DICTIONARY = os.path.join("/tmp", 'dictionary_m_words.txt')
 urllib.request.urlretrieve('http://bit.ly/2Cbj6zn', DICTIONARY)
 
 with open(DICTIONARY) as f:
     loglines = f.readlines()
+    
+#for i in loglines:
+#    print (i)    
 
-for i in loglines:
-    print (i)
+
+
+def load_dictionary():
+    """Load dictionary (sample) and return as generator (done)"""
+    with open(DICTIONARY) as f:
+        return (word.lower().strip() for word in f.readlines())
+
+
+def is_palindrome(word):
+    """Return if word is palindrome, 'madam' would be one.
+       Case insensitive, so Madam is valid too.
+       It should work for phrases too so strip all but alphanumeric chars.
+       So "No 'x' in 'Nixon'" should pass (see tests for more)"""
+    pass
+
+
+def get_longest_palindrome(words=None):
+    """Given a list of words return the longest palindrome
+       If called without argument use the load_dictionary helper
+       to populate the words list"""
+    pass
+
+
+
+for i in load_dictionary():
+       print (i)
+
